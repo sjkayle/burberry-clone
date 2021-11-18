@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+
+import Footer from './components/footer';
+import Navbar from './components/header';
+import Overlay from './components/overlay';
+import Hero from './components/sections/hero';
+import Message from './components/sections/message';
+import MenuImage from './components/sections/menu-image';
+import ColumnImages from './components/sections/column-images';
+import SingleImage from './components/sections/single-image';
+import SlideshowImages from './components/sections/slideshow-images';
+import CarouselImages from './components/sections/carousel-images';
 
 function App() {
+  const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <motion.div
+        onHoverStart={() => setIsHeaderHovered(true)}
+        onHoverEnd={() => setIsHeaderHovered(false)}
+      >
+        <Navbar />
+      </motion.div>
+
+      <Hero />
+      <Message />
+      <ColumnImages id={1} />
+      <SlideshowImages />
+      <CarouselImages />
+      <SingleImage />
+      <ColumnImages id={2} />
+      <MenuImage />
+
+      <Footer />
+
+      <AnimatePresence>{isHeaderHovered && <Overlay />}</AnimatePresence>
+    </>
   );
 }
 

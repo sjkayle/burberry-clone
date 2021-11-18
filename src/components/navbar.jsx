@@ -1,0 +1,116 @@
+import React, { useState } from 'react';
+import {
+  AnimatePresence,
+  AnimateSharedLayout,
+  motion,
+  useAnimation,
+} from 'framer-motion';
+
+import Badge from './badge';
+import Text, { BoldText } from './texts';
+
+import data from '../data/header';
+
+const variants = {
+  hidden: {
+    y: '-41.5rem',
+    transition: {
+      type: 'tween',
+      when: 'afterChildren',
+      duration: 0.2,
+    },
+  },
+  visible: {
+    y: 0,
+    transition: {
+      type: 'tween',
+      when: 'beforeChildren',
+      duration: 0.2,
+    },
+  },
+};
+
+const childrenVariants = {
+  hidden: {
+    opacity: 0,
+    y: 10,
+    transition: {
+      type: 'tween',
+    },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'tween',
+    },
+  },
+};
+
+const Navbar = () => {
+  const controls = useAnimation();
+  const [hoveredItem, setHoveredItem] = useState(null);
+
+  return (
+    <AnimateSharedLayout>
+      <motion.nav
+        onHoverStart={() => controls.start('visible')}
+        onHoverEnd={() => controls.start('hidden')}
+        className='h-20 mx-8'
+      >
+        <ul className='flex h-full uppercase font-semibold text-sm w-max relative z-50'>
+          {data.map((item) => (
+            <li
+              key={item.id}
+              className='flex items-end px-4 h-full pb-6 cursor-pointer'
+              onMouseEnter={() => setHoveredItem(item.id)}
+              onMouseLeave={() => setHoveredItem(null)}
+            >
+              <div className='relative'>
+                {item.title}
+                {hoveredItem === item.id && (
+                  <motion.div
+                    layoutId='underline'
+                    className='w-full h-0.5 bg-black absolute bottom-0 -mb-0.5'
+                  />
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </motion.nav>
+
+      <AnimatePresence exitBeforeEnter>
+        {hoveredItem !== null && data[hoveredItem - 1].category && (
+          <motion.div
+            animate='visible'
+            initial='hidden'
+            exit='hidden'
+            variants={variants}
+            className='absolute bg-white w-full top-0 left-0 px-10 pt-28'
+            onMouseEnter={() => setHoveredItem(hoveredItem)}
+            onMouseLeave={() => setHoveredItem(null)}
+            style={{ height: '41.5rem' }}
+          >
+            <motion.div key={hoveredItem} variants={childrenVariants}>
+              <BoldText link>{data[hoveredItem - 1].category}</BoldText>
+              {data[hoveredItem - 1].subcategories.map((sub, index) => {
+                const texts = sub.split('|');
+                return (
+                  <div key={index} className='py-2'>
+                    <Text link>
+                      {texts[0]}
+                      {texts.length > 1 && <Badge text={texts[1]} />}
+                    </Text>
+                  </div>
+                );
+              })}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </AnimateSharedLayout>
+  );
+};
+
+export default Navbar;
