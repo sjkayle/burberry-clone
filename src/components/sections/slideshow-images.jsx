@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer';
 
 import useDisplaySticky from '../../hooks/useDisplaySticky';
 
-import { ImageSection } from '../section';
 import StickyBox from '../sticky-box';
 
 import { slideshowData } from '../../data/misc';
@@ -36,7 +35,10 @@ const SlideshowImages = () => {
   };
 
   return (
-    <ImageSection ref={ref} background='none'>
+    <div
+      className='flex justify-center items-end my-0.5 h-screen relative lg:pb-12'
+      ref={ref}
+    >
       <div className='overflow-x-hidden absolute inset-0'>
         <div className='flex w-min'>
           {slideshowData.map((item, index) => (
@@ -71,7 +73,7 @@ const SlideshowImages = () => {
         handlePrev={handlePrev}
         position='bottom'
       />
-    </ImageSection>
+    </div>
   );
 };
 

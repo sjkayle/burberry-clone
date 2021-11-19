@@ -19,9 +19,32 @@ const variants = {
   },
 };
 
+const loadingVariants = {
+  loading: {
+    x: ['-24rem', '0rem'],
+    transition: {
+      ease: 'linear',
+      type: 'tween',
+      duration: 5,
+      delay: 1,
+    },
+  },
+};
+
+const mobileLoadingVariants = {
+  loading: {
+    x: ['-100vw', '0vw'],
+    transition: {
+      ease: 'linear',
+      type: 'tween',
+      duration: 5,
+      delay: 1,
+    },
+  },
+};
+
 const StickyBox = ({
   position,
-  pagination,
   currentPage,
   pages,
   title,
@@ -33,6 +56,7 @@ const StickyBox = ({
 }) => {
   const controls = useAnimation();
   const loadingControls = useAnimation();
+  const mobileLoadingControls = useAnimation();
 
   useEffect(() => {
     if (isDisplayed) {
@@ -43,28 +67,21 @@ const StickyBox = ({
   }, [controls, isDisplayed]);
 
   useEffect(() => {
-    loadingControls.start({
-      x: ['-24rem', '0rem'],
-      transition: {
-        ease: 'linear',
-        type: 'tween',
-        duration: 5,
-        delay: 1,
-      },
-    });
-  }, [loadingControls, currentPage]);
+    loadingControls.start('loading');
+    mobileLoadingControls.start('loading');
+  }, [loadingControls, mobileLoadingControls, currentPage]);
 
   return (
     <motion.div
-      className={`${
-        position === 'bottom' ? 'bottom-12' : 'top-1/2'
-      } sticky font-semibold`}
+      className={`sticky bottom-0 ${
+        position === 'bottom' ? 'lg:bottom-12' : 'lg:bottom-1/2'
+      }  w-screen lg:w-96 font-semibold z-10 flex-shrink-0`}
       animate={controls}
       initial='hidden'
       variants={variants}
     >
-      {controlledPagination ? (
-        <div className='flex mb-7 text-white gap-7 justify-center items-center'>
+      {controlledPagination && (
+        <div className='flex justify-between lg:justify-center items-center gap-9 p-5 lg:p-6 text-white'>
           <ChevronLeft
             size={18}
             className='cursor-pointer'
@@ -77,21 +94,25 @@ const StickyBox = ({
             onClick={handleNext}
           />
         </div>
-      ) : pagination ? (
-        <div className='flex mb-7 gap-7 justify-center items-center'>
-          <div className='text-sm text-center'>{`${currentPage} | ${pages}`}</div>
-        </div>
-      ) : null}
+      )}
 
-      <div className='flex flex-col justify-center bg-white w-96 h-24 uppercase relative overflow-x-hidden'>
+      <div className='flex flex-col justify-center h-24 uppercase bg-white relative overflow-x-hidden'>
         {controlledPagination && (
-          <motion.div
-            animate={loadingControls}
-            className='h-0.5 w-full absolute top-0 bg-black'
-          />
+          <>
+            <motion.div
+              animate={loadingControls}
+              variants={loadingVariants}
+              className='hidden lg:block h-0.5 w-full absolute top-0 bg-black'
+            />
+            <motion.div
+              animate={mobileLoadingControls}
+              variants={mobileLoadingVariants}
+              className='block lg:hidden h-0.5 w-full absolute top-0 bg-black'
+            />
+          </>
         )}
         <h5 className='text-xs text-center cursor-pointer'>{title}</h5>
-        <ul className='mt-1 flex gap-5 justify-center'>
+        <ul className='mt-2 flex gap-5 justify-center'>
           {options.map((option, index) => (
             <li key={index} className='cursor-pointer'>
               {option}

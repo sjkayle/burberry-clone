@@ -79,14 +79,14 @@ const Header = () => {
           className='bg-white absolute h-20 w-full z-40'
         />
 
-        <div className='h-20 flex items-center px-10'>
+        <div className='h-20 flex items-center px-7 xl:px-10'>
           <div className='uppercase font-bold text-3xl cursor-pointer relative z-50'>
             Burberry
           </div>
 
           <Navbar />
 
-          <div className='ml-auto flex gap-8'>
+          <div className='ml-auto flex gap-8 bg-red-100'>
             <SearchIcon />
             <UserIcon />
             <MinibagIcon />

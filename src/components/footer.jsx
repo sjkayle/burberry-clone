@@ -42,14 +42,14 @@ const Footer = () => {
 
   return (
     <footer className='bg-white'>
-      <div className='px-9 py-7 flex gap-14'>
-        <div className='w-72'>
+      <div className='px-4 lg:px-10 py-8 flex flex-col lg:flex-row lg:gap-14'>
+        <div className='flex-1 mb-12'>
           <BoldText>E-mail signup</BoldText>
           <Text>
             Sign up for email updates on the latest Burberry collections,
             campaigns and videos.
           </Text>
-          <div className='mt-8 relative'>
+          <div className='mt-9 relative'>
             <input
               type='text'
               value={value}
@@ -65,33 +65,37 @@ const Footer = () => {
             >
               Email*
             </motion.div>
-            <ArrowRight
-              size={18}
-              className='mb-2 absolute bottom-0 right-0 cursor-pointer z-20'
-            />
+            {value && (
+              <ArrowRight
+                size={18}
+                className='mb-2 absolute bottom-0 right-0 cursor-pointer z-20'
+              />
+            )}
           </div>
         </div>
 
-        <div className='w-72'>
+        <div className='flex-1'>
           <BoldText link>Store location</BoldText>
           <BoldText link>Download our app</BoldText>
         </div>
 
-        <div className='w-72'>
+        <div className='flex-1'>
           <Accordion />
         </div>
 
-        <div className='w-72'>
-          <BoldText link>Language</BoldText>
-          <Text link>English</Text>
-          <div className='mt-7'>
+        <div className='flex-1'>
+          <div className='flex lg:flex-col items-center lg:items-start justify-between py-1'>
+            <BoldText link>Language</BoldText>
+            <Text link>English</Text>
+          </div>
+          <div className='flex lg:flex-col items-center lg:items-start justify-between lg:mt-7 py-1'>
             <BoldText link>Shipping to</BoldText>
             <Text link>Malaysia (MYR)</Text>
           </div>
         </div>
       </div>
 
-      <div className='px-9 pt-3 pb-7 border-t border-gray-300 text-gray-500 text-xs leading-5'>
+      <div className='px-4 lg:px-9 pt-3 pb-7 border-t border-gray-300 text-gray-500 text-2xs leading-5'>
         If you are using a screen-reader and are having problems using this
         website, please call <DisclaimerLink>1 800 81 6567</DisclaimerLink> or{' '}
         <DisclaimerLink>contact us</DisclaimerLink> for assistance.

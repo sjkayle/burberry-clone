@@ -72,7 +72,7 @@ const Banner = ({ onClick }) => {
   };
 
   return (
-    <div className='w-full bg-black text-white h-11 flex justify-between items-center uppercase font-semibold text-xs px-14 relative z-50'>
+    <div className='w-full bg-black text-white h-11 flex justify-center lg:justify-between items-center uppercase font-semibold text-xs px-5 xl:px-12 relative z-50'>
       <div />
 
       <AnimatePresence exitBeforeEnter>
@@ -109,7 +109,7 @@ const Banner = ({ onClick }) => {
 
       <Close
         size={18}
-        className='hidden md:block cursor-pointer'
+        className='hidden lg:block cursor-pointer'
         onClick={onClick}
       />
     </div>

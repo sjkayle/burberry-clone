@@ -3,7 +3,6 @@ import { useInView } from 'react-intersection-observer';
 
 import useDisplaySticky from '../../hooks/useDisplaySticky';
 
-import { ImageSection } from '../section';
 import StickyBox from '../sticky-box';
 
 const SingleImage = () => {
@@ -13,14 +12,18 @@ const SingleImage = () => {
   const isStickyBoxDisplayed = useDisplaySticky(entry, inView);
 
   return (
-    <ImageSection image='/background.jpeg' ref={ref}>
+    <div
+      className='flex justify-center items-end my-0.5 h-screen bg-cover relative lg:pb-12'
+      style={{ backgroundImage: 'url(/background.jpeg)' }}
+      ref={ref}
+    >
       <StickyBox
         title='Gift an icon'
         options={['Women', 'Men']}
         isDisplayed={isStickyBoxDisplayed}
         position='bottom'
       />
-    </ImageSection>
+    </div>
   );
 };
 

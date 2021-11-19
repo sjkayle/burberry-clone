@@ -1,8 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'react-feather';
 
-import Section from '../section';
-
 import { threeColumnData, twoColumnData } from '../../data/misc';
 
 const ColumnItem = ({ children }) => {
@@ -16,14 +14,14 @@ const ColumnItem = ({ children }) => {
 
 const Column = ({ title, options, image }) => {
   return (
-    <div className='w-full'>
+    <div className='w-full relative'>
       <div
-        className='h-3/4 bg-cover'
+        className='h-screen lg:h-3/4 bg-cover'
         style={{ backgroundImage: `url(${image})` }}
       />
-      <div className='mt-5 uppercase font-semibold flex flex-col items-center'>
+      <div className='absolute lg:static bottom-0 bg-white w-full py-6 lg:py-0 mt-6 uppercase font-semibold flex flex-col items-center'>
         <h4 className='cursor-pointer'>{title}</h4>
-        <div className='mt-3 flex justify-center gap-6 text-sm'>
+        <div className='mt-7 flex flex-col lg:flex-row items-center justify-center gap-6 text-sm'>
           {options.map((option, index) => (
             <ColumnItem key={index}>{option}</ColumnItem>
           ))}
@@ -36,13 +34,13 @@ const Column = ({ title, options, image }) => {
 const ColumnImages = ({ id }) => {
   const columns = id === 1 ? [...threeColumnData] : [...twoColumnData];
   return (
-    <Section background='none'>
-      <div className='flex flex-1 gap-px h-full'>
+    <div className='flex justify-center items-center my-0.5 h-min lg:h-screen'>
+      <div className='flex flex-col lg:flex-row flex-1 gap-px h-full'>
         {columns.map((column, index) => (
           <Column key={index} {...column} />
         ))}
       </div>
-    </Section>
+    </div>
   );
 };
 

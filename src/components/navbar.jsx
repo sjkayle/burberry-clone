@@ -56,13 +56,13 @@ const Navbar = () => {
       <motion.nav
         onHoverStart={() => controls.start('visible')}
         onHoverEnd={() => controls.start('hidden')}
-        className='h-20 mx-8'
+        className='h-20 mx-8 bg-green-100'
       >
-        <ul className='flex h-full uppercase font-semibold text-sm w-max relative z-50'>
+        <ul className='flex h-full w-max uppercase font-semibold text-xs xl:text-sm relative z-50'>
           {data.map((item) => (
             <li
               key={item.id}
-              className='flex items-end px-4 h-full pb-6 cursor-pointer'
+              className={`flex items-end px-4 pb-6 h-full cursor-pointer`}
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -87,7 +87,7 @@ const Navbar = () => {
             initial='hidden'
             exit='hidden'
             variants={variants}
-            className='absolute bg-white w-full top-0 left-0 px-10 pt-28'
+            className='absolute bg-white w-full top-0 left-0 px-7 xl:px-10 pt-28'
             onMouseEnter={() => setHoveredItem(hoveredItem)}
             onMouseLeave={() => setHoveredItem(null)}
             style={{ height: '41.5rem' }}

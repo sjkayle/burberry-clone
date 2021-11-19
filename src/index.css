@@ -22,3 +22,23 @@ code {
 }
 
 /* font-family Styrene */
+
+@layer utilities {
+  @variants responsive {
+    .h-hero-xl {
+      height: 33.75rem;
+    }
+
+    .h-hero {
+      height: 30rem;
+    }
+
+    .text-2xs {
+      font-size: 0.6rem;
+    }
+
+    .w-carousel-image {
+      width: 30rem;
+    }
+  }
+}

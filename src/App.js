@@ -17,12 +17,12 @@ function App() {
 
   return (
     <>
-      <motion.div
+      {/* <motion.div
         onHoverStart={() => setIsHeaderHovered(true)}
         onHoverEnd={() => setIsHeaderHovered(false)}
       >
         <Navbar />
-      </motion.div>
+      </motion.div> */}
 
       <Hero />
       <Message />
@@ -39,5 +39,9 @@ function App() {
     </>
   );
 }
+
+/**
+ * TODO: fix menu image
+ */
 
 export default App;
