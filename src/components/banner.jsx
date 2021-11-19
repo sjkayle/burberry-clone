@@ -90,7 +90,7 @@ const Banner = ({ handleClose }) => {
               onClick={handlePrevious}
             />
           </motion.div>
-          <motion.div variants={variants} className='cursor-pointer'>
+          <motion.div variants={variants} className='cursor-pointer truncate'>
             {data[currentText].split('').map((letter, index) => (
               <motion.span key={index} variants={letterVariants}>
                 {letter}
