@@ -54,7 +54,11 @@ const Footer = () => {
           </Text>
 
           <div className='mt-8 relative'>
+            <label for='email' className='hidden'>
+              Email
+            </label>
             <input
+              id='email'
               type='text'
               value={value}
               onChange={(e) => setValue(e.target.value)}

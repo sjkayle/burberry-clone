@@ -20,7 +20,7 @@ const Column = ({ title, options, image }) => {
         style={{ backgroundImage: `url(${image})` }}
       />
       <div className='absolute lg:static bottom-0 bg-white w-full py-6 lg:py-0 mt-6 uppercase font-semibold flex flex-col items-center'>
-        <h4 className='cursor-pointer'>{title}</h4>
+        <h1 className='cursor-pointer'>{title}</h1>
         <div className='mt-7 flex flex-col lg:flex-row items-center justify-center gap-6 text-sm'>
           {options.map((option, index) => (
             <ColumnItem key={index}>{option}</ColumnItem>
