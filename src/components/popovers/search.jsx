@@ -38,28 +38,26 @@ const childrenVariants = {
   },
 };
 
-const SearchIcon = ({ disabled }) => {
+const SearchPopover = () => {
   const controls = useAnimation();
   const searchInput = useRef(null);
   const [value, setValue] = useState('');
 
   return (
     <>
-      <motion.div
-        onHoverStart={() => {
-          if (disabled) return;
+      <div
+        onMouseEnter={() => {
           controls.start('visible');
           searchInput.current.focus();
         }}
-        onHoverEnd={() => {
-          if (disabled) return;
+        onMouseLeave={() => {
           controls.start('hidden');
           setValue('');
         }}
         className='cursor-pointer w-max'
       >
         <Search className='w-5 h-5 lg:w-6 lg:h-6 relative z-50' />
-      </motion.div>
+      </div>
 
       <AnimatePresence>
         <motion.div
@@ -91,4 +89,4 @@ const SearchIcon = ({ disabled }) => {
   );
 };
 
-export default SearchIcon;
+export default SearchPopover;

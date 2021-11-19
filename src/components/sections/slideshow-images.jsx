@@ -36,8 +36,8 @@ const SlideshowImages = () => {
 
   return (
     <div
-      className='flex justify-center items-end my-0.5 h-screen relative lg:pb-12'
       ref={ref}
+      className='flex justify-center items-end my-0.5 h-screen relative lg:pb-12'
     >
       <div className='overflow-x-hidden absolute inset-0'>
         <div className='flex w-min'>

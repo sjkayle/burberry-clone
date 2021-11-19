@@ -13,9 +13,9 @@ const SingleImage = () => {
 
   return (
     <div
+      ref={ref}
       className='flex justify-center items-end my-0.5 lg:pb-12 h-screen bg-cover relative'
       style={{ backgroundImage: 'url(/background.jpeg)' }}
-      ref={ref}
     >
       <StickyBox
         title='Gift an icon'

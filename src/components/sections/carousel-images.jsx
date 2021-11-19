@@ -30,7 +30,7 @@ const CarouselImages = () => {
   }, [controls]);
 
   return (
-    <div className='flex items-end my-0.5 h-screen relative lg:py-11' ref={ref}>
+    <div ref={ref} className='flex items-end my-0.5 h-screen relative lg:py-11'>
       <StickyBox
         title='All wrapped up'
         options={['Festive looks']}

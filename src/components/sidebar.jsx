@@ -3,9 +3,9 @@ import { motion, useAnimation } from 'framer-motion';
 import { Menu, X as Close } from 'react-feather';
 
 import Accordion from './accordion';
-import NormalText, { BoldText } from './texts';
+import Logo from './logo';
 import Overlay from './overlay';
-import Logo from './icons/logo';
+import NormalText, { BoldText } from './texts';
 
 import data from '../data/header';
 

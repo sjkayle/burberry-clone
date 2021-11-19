@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { Search, User } from 'react-feather';
+import { Search, ShoppingBag, User } from 'react-feather';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 
 import Banner from './banner';
+import Logo from './logo';
 import Navbar from './navbar';
 import Overlay from './overlay';
 import Sidebar from './sidebar';
-import MinibagIcon from './icons/minibag';
-import SearchIcon from './icons/search';
-import Logo from './icons/logo';
+import ShoppingBagPopover from './popovers/shopping-bag';
+import SearchPopover from './popovers/search';
 
 const variants = {
   hidden: {
@@ -91,9 +91,8 @@ const Header = () => {
           <Logo />
 
           <div className='ml-auto flex gap-4'>
-            {/* <SearchIcon disabled /> */}
             <Search className='w-5 h-5 cursor-pointer' />
-            <MinibagIcon disabled />
+            <ShoppingBag className='w-5 h-5 cursor-pointer' />
             <Sidebar />
           </div>
         </div>
@@ -119,9 +118,9 @@ const Header = () => {
             <Logo />
             <Navbar />
             <div className='ml-auto flex gap-8'>
-              <SearchIcon />
+              <SearchPopover />
               <User className='relative z-50 cursor-pointer' />
-              <MinibagIcon />
+              <ShoppingBagPopover />
             </div>
           </div>
         </div>

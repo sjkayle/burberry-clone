@@ -38,24 +38,18 @@ const childrenVariants = {
   },
 };
 
-const MinibagIcon = ({ disabled }) => {
+const ShoppingBagPopover = () => {
   const controls = useAnimation();
 
   return (
     <>
-      <motion.div
-        onHoverStart={() => {
-          if (disabled) return;
-          controls.start('visible');
-        }}
-        onHoverEnd={() => {
-          if (disabled) return;
-          controls.start('hidden');
-        }}
+      <div
+        onMouseEnter={() => controls.start('visible')}
+        onMouseLeave={() => controls.start('hidden')}
         className='cursor-pointer w-max'
       >
         <ShoppingBag className='w-5 h-5 lg:w-6 lg:h-6 relative z-50' />
-      </motion.div>
+      </div>
 
       <AnimatePresence>
         <motion.div
@@ -73,4 +67,4 @@ const MinibagIcon = ({ disabled }) => {
   );
 };
 
-export default MinibagIcon;
+export default ShoppingBagPopover;

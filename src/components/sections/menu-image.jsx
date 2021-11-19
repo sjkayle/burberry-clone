@@ -8,7 +8,7 @@ const variants = {
       staggerChildren: 0.05,
     },
   },
-  hover: {
+  hovered: {
     opacity: 1,
   },
 };
@@ -32,10 +32,10 @@ const MenuItem = ({ children, inView }) => {
   }, [controls, inView]);
 
   return (
-    <motion.div
-      className='h-14 cursor-pointer opacity-1 lg:opacity-30'
+    <motion.li
+      className='h-14 cursor-pointer lg:opacity-30'
       animate={controls}
-      whileHover='hover'
+      whileHover='hovered'
       initial='hidden'
       variants={variants}
     >
@@ -44,7 +44,7 @@ const MenuItem = ({ children, inView }) => {
           {letter}
         </motion.span>
       ))}
-    </motion.div>
+    </motion.li>
   );
 };
 
@@ -58,15 +58,15 @@ const MenuImage = () => {
         backgroundImage: 'url(/woods.jpeg)',
       }}
     >
-      <motion.div
-        className='text-center text-white text-2xl lg:text-3xl font-semibold uppercase'
+      <ul
         ref={ref}
+        className='text-center text-white text-2xl lg:text-3xl font-semibold uppercase'
       >
         <MenuItem inView={inView}>Women</MenuItem>
         <MenuItem inView={inView}>Men</MenuItem>
         <MenuItem inView={inView}>Children</MenuItem>
         <MenuItem inView={inView}>Bags</MenuItem>
-      </motion.div>
+      </ul>
     </div>
   );
 };
