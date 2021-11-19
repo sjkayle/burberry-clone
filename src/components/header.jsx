@@ -5,12 +5,12 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 
 import Banner from './banner';
 import Logo from './logo';
+import Modal from './modal';
 import Navbar from './navbar';
 import Overlay from './overlay';
 import Sidebar from './sidebar';
 import ShoppingBagPopover from './popovers/shopping-bag';
 import SearchPopover from './popovers/search';
-import Modal from './modal';
 
 const variants = {
   hidden: {
