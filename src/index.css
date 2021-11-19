@@ -33,6 +33,14 @@ code {
       height: 30rem;
     }
 
+    .h-nav-popover {
+      height: 41.5rem;
+    }
+
+    .h-search-popover {
+      height: 29.5rem;
+    }
+
     .text-2xs {
       font-size: 0.6rem;
     }

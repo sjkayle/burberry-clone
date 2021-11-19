@@ -5,7 +5,7 @@ import { Menu, X as Close } from 'react-feather';
 import Accordion from './accordion';
 import Logo from './logo';
 import Overlay from './overlay';
-import Text, { BoldText } from './texts';
+import Text from './text';
 
 import data from '../data/header';
 
@@ -68,7 +68,7 @@ const Sidebar = () => {
 
         <div className='my-4 h-px bg-gray-300 w-4' />
         <div>
-          <BoldText>Customer Service</BoldText>
+          <Text bold>Customer Service</Text>
           <Text link>Store Locator</Text>
           <Text link>Customer Service</Text>
           <Text link>Legal &amp; Cookies</Text>
@@ -76,7 +76,7 @@ const Sidebar = () => {
 
         <div className='my-4 h-px bg-gray-300 w-4' />
         <div>
-          <BoldText>Account</BoldText>
+          <Text bold>Account</Text>
           <Text link>Sign in/Register</Text>
           <Text link>Bag</Text>
           <Text link>Favourites</Text>

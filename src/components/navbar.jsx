@@ -7,7 +7,7 @@ import {
 } from 'framer-motion';
 
 import Badge from './badge';
-import Text, { BoldText } from './texts';
+import Text from './text';
 
 import data from '../data/header';
 
@@ -87,17 +87,18 @@ const Navbar = () => {
             initial='hidden'
             exit='hidden'
             variants={variants}
-            className='absolute bg-white w-full top-0 left-0 px-7 xl:px-10 pt-28'
+            className='absolute bg-white w-full h-nav-popover top-0 left-0 px-7 xl:px-10 pt-28'
             onMouseEnter={() => setHoveredItem(hoveredItem)}
             onMouseLeave={() => setHoveredItem(null)}
-            style={{ height: '41.5rem' }}
           >
             <motion.div key={hoveredItem} variants={childrenVariants}>
-              <BoldText link>{data[hoveredItem - 1].category}</BoldText>
+              <Text bold link>
+                {data[hoveredItem - 1].category}
+              </Text>
               {data[hoveredItem - 1].links.map((link, index) => {
                 const texts = link.split('|');
                 return (
-                  <Text key={index} link height='7'>
+                  <Text key={index} link>
                     {texts[0]}
                     {texts.length > 1 && <Badge text={texts[1]} />}
                   </Text>

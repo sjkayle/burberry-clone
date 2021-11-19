@@ -3,7 +3,7 @@ import { ChevronDown } from 'react-feather';
 import { motion, useAnimation } from 'framer-motion';
 
 import Badge from './badge';
-import Text, { BoldText } from './texts';
+import Text from './text';
 
 const variants = {
   unrotated: {
@@ -38,14 +38,14 @@ const AccordionItem = ({ item, isItemOpen, handleClick }) => {
           handleClick(item.id);
         }}
       >
-        <BoldText link>
+        <Text bold link>
           {item.title}
           {item.links.length > 0 && (
             <motion.div animate={controls} variants={variants}>
               <ChevronDown size={16} />
             </motion.div>
           )}
-        </BoldText>
+        </Text>
       </div>
       {isItemOpen &&
         item.links.map((link, index) => {

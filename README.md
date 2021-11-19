@@ -2,7 +2,7 @@
 
 This application is a simple static clone of the landing page of the [Burberry Malaysia](https://my.burberry.com/) website.
 
-I started this project in order for me to learn how to implement [Framer Motion](https://www.framer.com/motion/), an animation library for React that I recently discovered, in my future projects. I tried to mimic the design and animations from the original page as closely as possible.
+I started this project in order for me to learn how to implement [Framer Motion](https://www.framer.com/motion/), an animation library for React that I recently discovered, in my future projects. I tried to mimic the animations and gesture behaviour from the original page as closely as possible.
 
 _All content and design belongs to Burberry._
 

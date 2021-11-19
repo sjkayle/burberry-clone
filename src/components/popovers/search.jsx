@@ -64,8 +64,7 @@ const SearchPopover = () => {
           animate={controls}
           initial='hidden'
           variants={variants}
-          className='absolute bg-white w-full top-0 left-0 px-10 pt-32'
-          style={{ height: '29.5rem' }}
+          className='absolute bg-white w-full h-search-popover top-0 left-0 px-10 pt-32'
         >
           <motion.div variants={childrenVariants} className='relative'>
             <input

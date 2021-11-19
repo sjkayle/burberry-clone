@@ -54,9 +54,7 @@ const MenuImage = () => {
   return (
     <div
       className='flex justify-center items-center my-0.5 h-screen bg-cover'
-      style={{
-        backgroundImage: 'url(/woods.jpeg)',
-      }}
+      style={{ backgroundImage: 'url(/woods.jpeg)' }}
     >
       <ul
         ref={ref}

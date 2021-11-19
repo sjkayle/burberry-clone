@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { ArrowRight } from 'react-feather';
 
 import Accordion from './accordion';
-import Text, { BoldText } from './texts';
+import Text from './text';
 
 import data from '../data/footer';
 
@@ -46,9 +46,9 @@ const Footer = () => {
     <footer className='bg-white'>
       <div className='px-4 lg:px-10 py-6 flex flex-col lg:flex-row lg:gap-14'>
         <div className='flex-1 mb-10'>
-          <BoldText>E-mail signup</BoldText>
+          <Text bold>E-mail signup</Text>
 
-          <Text height='10'>
+          <Text>
             Sign up for email updates on the latest Burberry collections,
             campaigns and videos.
           </Text>
@@ -83,8 +83,12 @@ const Footer = () => {
         </div>
 
         <div className='flex-1'>
-          <BoldText link>Store location</BoldText>
-          <BoldText link>Download our app</BoldText>
+          <Text bold link>
+            Store location
+          </Text>
+          <Text bold link>
+            Download our app
+          </Text>
         </div>
 
         <div className='flex-1'>
@@ -93,16 +97,16 @@ const Footer = () => {
 
         <div className='flex-1'>
           <div className='flex lg:flex-col items-center lg:items-start justify-between'>
-            <BoldText link>Language</BoldText>
-            <Text link height='5'>
-              English
+            <Text bold link>
+              Language
             </Text>
+            <Text link>English</Text>
           </div>
           <div className='flex lg:flex-col items-center lg:items-start justify-between lg:mt-4'>
-            <BoldText link>Shipping to</BoldText>
-            <Text link height='5'>
-              Malaysia (MYR)
+            <Text bold link>
+              Shipping to
             </Text>
+            <Text link>Malaysia (MYR)</Text>
           </div>
         </div>
       </div>
