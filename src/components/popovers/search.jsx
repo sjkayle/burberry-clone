@@ -73,7 +73,7 @@ const SearchPopover = () => {
               type='text'
               placeholder='Search'
               value={value}
-              className='text border-b rounded-none border-black w-full pb-4 focus:outline-none bg-transparent'
+              className='text-lg border-b rounded-none border-black w-full pb-4 focus:outline-none bg-transparent'
               onChange={(e) => setValue(e.target.value)}
             />
             {value && (

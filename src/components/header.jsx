@@ -10,6 +10,7 @@ import Overlay from './overlay';
 import Sidebar from './sidebar';
 import ShoppingBagPopover from './popovers/shopping-bag';
 import SearchPopover from './popovers/search';
+import Modal from './modal';
 
 const variants = {
   hidden: {
@@ -54,6 +55,7 @@ const backgroundVariants = {
 const Header = () => {
   const controls = useAnimation();
   const [isBannerDisplayed, setIsBannerDisplayed] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isOverlayDisplayed, setIsOverlayDisplayed] = useState(false);
 
   useScrollPosition(
@@ -91,7 +93,10 @@ const Header = () => {
           <Logo />
 
           <div className='ml-auto flex gap-4'>
-            <Search className='w-5 h-5 cursor-pointer' />
+            <Search
+              className='w-5 h-5 cursor-pointer'
+              onClick={() => setIsModalOpen(true)}
+            />
             <ShoppingBag className='w-5 h-5 cursor-pointer' />
             <Sidebar />
           </div>
@@ -125,6 +130,8 @@ const Header = () => {
           </div>
         </div>
       </motion.header>
+
+      <Modal isOpen={isModalOpen} handleClose={() => setIsModalOpen(false)} />
     </>
   );
 };
