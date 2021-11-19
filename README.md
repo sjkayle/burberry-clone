@@ -1,8 +1,6 @@
 # Burberry MY Landing Page Clone
 
-## About
-
-This application is a simple static clone of the landing page of the Burberry Malaysia website.
+This application is a simple static clone of the landing page of the [Burberry Malaysia](https://my.burberry.com/) website.
 
 I started this project in order for me to learn how to implement [Framer Motion](https://www.framer.com/motion/), an animation library for React that I recently discovered, in my future projects. I tried to mimic the design and animations from the original page as closely as possible.
 
