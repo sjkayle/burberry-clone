@@ -5,7 +5,7 @@ import { Menu, X as Close } from 'react-feather';
 import Accordion from './accordion';
 import Logo from './logo';
 import Overlay from './overlay';
-import NormalText, { BoldText } from './texts';
+import Text, { BoldText } from './texts';
 
 import data from '../data/header';
 
@@ -69,17 +69,17 @@ const Sidebar = () => {
         <div className='my-4 h-px bg-gray-300 w-4' />
         <div>
           <BoldText>Customer Service</BoldText>
-          <NormalText link>Store Locator</NormalText>
-          <NormalText link>Customer Service</NormalText>
-          <NormalText link>Legal &amp; Cookies</NormalText>
+          <Text link>Store Locator</Text>
+          <Text link>Customer Service</Text>
+          <Text link>Legal &amp; Cookies</Text>
         </div>
 
         <div className='my-4 h-px bg-gray-300 w-4' />
         <div>
           <BoldText>Account</BoldText>
-          <NormalText link>Sign in/Register</NormalText>
-          <NormalText link>Bag</NormalText>
-          <NormalText link>Favourites</NormalText>
+          <Text link>Sign in/Register</Text>
+          <Text link>Bag</Text>
+          <Text link>Favourites</Text>
         </div>
       </motion.div>
     </>

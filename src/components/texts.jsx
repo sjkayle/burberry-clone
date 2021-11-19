@@ -12,16 +12,16 @@ export const BoldText = ({ children, link }) => {
   );
 };
 
-const NormalText = ({ children, link, paddingY = 3 }) => {
+const Text = ({ children, link, paddingY = 3 }) => {
   return (
     <div
       className={`${
         link ? 'cursor-pointer hover:text-gray-400' : ''
-      } py-${paddingY} text-xs text-black`}
+      } flex items-center py-${paddingY} text-xs text-black`}
     >
       {children}
     </div>
   );
 };
 
-export default NormalText;
+export default Text;
