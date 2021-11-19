@@ -14,7 +14,7 @@ const variants = {
     y: 0,
     transition: {
       type: 'tween',
-      duration: 0.4,
+      duration: 0.2,
     },
   },
 };
@@ -75,7 +75,7 @@ const StickyBox = ({
     <motion.div
       className={`sticky bottom-0 ${
         position === 'bottom' ? 'lg:bottom-12' : 'lg:bottom-1/2'
-      }  w-screen lg:w-96 font-semibold z-10 flex-shrink-0`}
+      }  w-full lg:w-96 font-semibold z-10 flex-shrink-0`}
       animate={controls}
       initial='hidden'
       variants={variants}

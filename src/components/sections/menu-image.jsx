@@ -59,7 +59,7 @@ const MenuImage = () => {
       }}
     >
       <motion.div
-        className='text-center text-white text-3xl font-semibold uppercase'
+        className='text-center text-white text-2xl lg:text-3xl font-semibold uppercase'
         ref={ref}
       >
         <MenuItem inView={inView}>Women</MenuItem>

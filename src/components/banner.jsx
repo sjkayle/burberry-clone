@@ -50,35 +50,35 @@ const letterVariants = {
   },
 };
 
-const Banner = ({ onClick }) => {
-  const [currentData, setCurrentData] = useState(0);
+const Banner = ({ handleClose }) => {
+  const [currentText, setCurrentText] = useState(0);
 
   useEffect(() => {
     const t = setInterval(async () => {
-      setCurrentData((prev) => (prev === data.length - 1 ? 0 : prev + 1));
+      setCurrentText((prev) => (prev === data.length - 1 ? 0 : prev + 1));
     }, 5000);
 
     return () => {
       clearInterval(t);
     };
-  }, [currentData]);
+  }, [currentText]);
 
   const handleNext = () => {
-    setCurrentData((prev) => (prev === data.length - 1 ? 0 : prev + 1));
+    setCurrentText((prev) => (prev === data.length - 1 ? 0 : prev + 1));
   };
 
   const handlePrevious = () => {
-    setCurrentData((prev) => (prev === 0 ? data.length - 1 : prev - 1));
+    setCurrentText((prev) => (prev === 0 ? data.length - 1 : prev - 1));
   };
 
   return (
-    <div className='w-full bg-black text-white h-11 flex justify-center lg:justify-between items-center uppercase font-semibold text-xs px-5 xl:px-12 relative z-50'>
+    <div className='w-full bg-black text-white h-11 flex justify-center lg:justify-between items-center px-5 xl:px-12 relative z-40'>
       <div />
 
       <AnimatePresence exitBeforeEnter>
         <motion.div
-          key={currentData}
-          className='flex items-center gap-3'
+          key={currentText}
+          className='flex items-center gap-3 uppercase font-semibold text-xs'
           animate='visible'
           initial='hidden'
           exit='exit'
@@ -91,7 +91,7 @@ const Banner = ({ onClick }) => {
             />
           </motion.div>
           <motion.div variants={variants} className='cursor-pointer'>
-            {data[currentData].split('').map((letter, index) => (
+            {data[currentText].split('').map((letter, index) => (
               <motion.span key={index} variants={letterVariants}>
                 {letter}
               </motion.span>
@@ -110,7 +110,7 @@ const Banner = ({ onClick }) => {
       <Close
         size={18}
         className='hidden lg:block cursor-pointer'
-        onClick={onClick}
+        onClick={handleClose}
       />
     </div>
   );

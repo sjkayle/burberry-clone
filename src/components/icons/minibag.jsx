@@ -38,17 +38,23 @@ const childrenVariants = {
   },
 };
 
-const MinibagIcon = () => {
+const MinibagIcon = ({ disabled }) => {
   const controls = useAnimation();
 
   return (
     <>
       <motion.div
-        onHoverStart={() => controls.start('visible')}
-        onHoverEnd={() => controls.start('hidden')}
+        onHoverStart={() => {
+          if (disabled) return;
+          controls.start('visible');
+        }}
+        onHoverEnd={() => {
+          if (disabled) return;
+          controls.start('hidden');
+        }}
         className='cursor-pointer w-max'
       >
-        <ShoppingBag className='relative z-50' />
+        <ShoppingBag className='w-5 h-5 lg:w-6 lg:h-6 relative z-50' />
       </motion.div>
 
       <AnimatePresence>

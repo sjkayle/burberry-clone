@@ -3,7 +3,7 @@ const headerData = [
     id: 1,
     title: 'New in',
     category: 'Women',
-    subcategories: [
+    links: [
       'New In',
       'Icons|New',
       'Winter Warmers|New',
@@ -15,7 +15,7 @@ const headerData = [
     id: 2,
     title: 'Women',
     category: 'New arrivals',
-    subcategories: [
+    links: [
       'New In',
       'Icons',
       'Winter Warmers|New',
@@ -28,7 +28,7 @@ const headerData = [
     id: 3,
     title: 'Men',
     category: 'New arrivals',
-    subcategories: [
+    links: [
       'New In',
       'Winter Warmers|New',
       'Unmistakably Burberry|New',
@@ -40,13 +40,13 @@ const headerData = [
     id: 4,
     title: 'Children',
     category: 'New arrivals',
-    subcategories: ['New In', 'Unmistakably Burberry'],
+    links: ['New In', 'Unmistakably Burberry'],
   },
   {
     id: 5,
     title: 'Gifts',
     category: "Women's gifts",
-    subcategories: [
+    links: [
       'All Gifts',
       'Stocking Fillers',
       'Personalised Gifts',
@@ -59,7 +59,7 @@ const headerData = [
     id: 6,
     title: 'Outerwear',
     category: 'Women',
-    subcategories: [
+    links: [
       'All Outerwear',
       'Puffers',
       'Trench Coats',
@@ -72,7 +72,7 @@ const headerData = [
     id: 7,
     title: 'Bags',
     category: 'Signature bags',
-    subcategories: [
+    links: [
       'The Olympia Bag',
       'The Pocket Bag',
       'Lola Bag',
@@ -85,7 +85,7 @@ const headerData = [
     id: 8,
     title: 'Stories',
     category: 'Burberry collaborates',
-    subcategories: [
+    links: [
       'Imagined Landscapes Jeju|New',
       'Vogue and GQ x Burberry|New',
       '#InBurberry: TB Summer Monogram|New',
@@ -105,7 +105,7 @@ const headerData = [
     id: 9,
     title: 'Beyond',
     category: '',
-    subcategories: [],
+    links: [],
   },
 ];
 

@@ -36,7 +36,7 @@ const CarouselImages = () => {
         options={['Festive looks']}
         isDisplayed={isStickyBoxDisplayed}
       />
-      <div className='lg:static h-full overflow-hidden absolute inset-0 flex-1 bg-blue-100'>
+      <div className='lg:static h-full overflow-hidden absolute inset-0 flex-1'>
         <motion.div
           animate={controls}
           variants={variants}

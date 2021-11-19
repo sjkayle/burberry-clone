@@ -56,13 +56,13 @@ const Navbar = () => {
       <motion.nav
         onHoverStart={() => controls.start('visible')}
         onHoverEnd={() => controls.start('hidden')}
-        className='h-20 mx-8 bg-green-100'
+        className='h-20 mx-8'
       >
         <ul className='flex h-full w-max uppercase font-semibold text-xs xl:text-sm relative z-50'>
           {data.map((item) => (
             <li
               key={item.id}
-              className={`flex items-end px-4 pb-6 h-full cursor-pointer`}
+              className='flex items-end px-2 xl:px-4 pb-6 h-full cursor-pointer'
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -94,15 +94,13 @@ const Navbar = () => {
           >
             <motion.div key={hoveredItem} variants={childrenVariants}>
               <BoldText link>{data[hoveredItem - 1].category}</BoldText>
-              {data[hoveredItem - 1].subcategories.map((sub, index) => {
-                const texts = sub.split('|');
+              {data[hoveredItem - 1].links.map((link, index) => {
+                const texts = link.split('|');
                 return (
-                  <div key={index} className='py-2'>
-                    <Text link>
-                      {texts[0]}
-                      {texts.length > 1 && <Badge text={texts[1]} />}
-                    </Text>
-                  </div>
+                  <Text key={index} link paddingY='2'>
+                    {texts[0]}
+                    {texts.length > 1 && <Badge text={texts[1]} />}
+                  </Text>
                 );
               })}
             </motion.div>

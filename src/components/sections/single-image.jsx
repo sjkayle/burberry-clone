@@ -13,7 +13,7 @@ const SingleImage = () => {
 
   return (
     <div
-      className='flex justify-center items-end my-0.5 h-screen bg-cover relative lg:pb-12'
+      className='flex justify-center items-end my-0.5 lg:pb-12 h-screen bg-cover relative'
       style={{ backgroundImage: 'url(/background.jpeg)' }}
       ref={ref}
     >

@@ -5,6 +5,8 @@ import { ArrowRight } from 'react-feather';
 import Accordion from './accordion';
 import Text, { BoldText } from './texts';
 
+import data from '../data/footer';
+
 const variants = {
   blurred: {
     y: 0,
@@ -43,13 +45,15 @@ const Footer = () => {
   return (
     <footer className='bg-white'>
       <div className='px-4 lg:px-10 py-8 flex flex-col lg:flex-row lg:gap-14'>
-        <div className='flex-1 mb-12'>
+        <div className='flex-1 mb-10'>
           <BoldText>E-mail signup</BoldText>
-          <Text>
+
+          <Text paddingY='0'>
             Sign up for email updates on the latest Burberry collections,
             campaigns and videos.
           </Text>
-          <div className='mt-9 relative'>
+
+          <div className='mt-8 relative'>
             <input
               type='text'
               value={value}
@@ -80,17 +84,21 @@ const Footer = () => {
         </div>
 
         <div className='flex-1'>
-          <Accordion />
+          <Accordion data={data} />
         </div>
 
         <div className='flex-1'>
-          <div className='flex lg:flex-col items-center lg:items-start justify-between py-1'>
+          <div className='flex lg:flex-col items-center lg:items-start justify-between'>
             <BoldText link>Language</BoldText>
-            <Text link>English</Text>
+            <Text link paddingY='0'>
+              English
+            </Text>
           </div>
-          <div className='flex lg:flex-col items-center lg:items-start justify-between lg:mt-7 py-1'>
+          <div className='flex lg:flex-col items-center lg:items-start justify-between lg:mt-7'>
             <BoldText link>Shipping to</BoldText>
-            <Text link>Malaysia (MYR)</Text>
+            <Text link paddingY='0'>
+              Malaysia (MYR)
+            </Text>
           </div>
         </div>
       </div>

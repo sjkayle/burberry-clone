@@ -1,24 +1,29 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const variants = {
-  initial: {
+  hidden: {
     opacity: 0,
   },
-  hover: {
+  visible: {
     opacity: 1,
   },
 };
 
-const Overlay = () => {
+const Overlay = ({ visible, handleClickOverlay }) => {
   return (
-    <motion.div
-      animate='hover'
-      initial='initial'
-      exit='initial'
-      variants={variants}
-      className='fixed inset-0 bg-opacity-50 bg-black'
-    />
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          animate='visible'
+          initial='hidden'
+          exit='hidden'
+          variants={variants}
+          className='fixed inset-0 bg-opacity-50 bg-black z-40'
+          onTap={handleClickOverlay}
+        />
+      )}
+    </AnimatePresence>
   );
 };
 

@@ -13,7 +13,7 @@ const HeroOption = ({ children }) => {
 const Hero = () => {
   return (
     <div
-      className='flex flex-col justify-center items-center gap-4 h-hero xl:h-hero-xl px-4 text-white uppercase font-semibold'
+      className='flex flex-col justify-center items-center gap-4 h-screen lg:h-hero xl:h-hero-xl px-4 text-white uppercase font-semibold'
       style={{ backgroundImage: 'url(/hero.jpeg)' }}
     >
       <h1 className='text-4xl text-center cursor-pointer'>

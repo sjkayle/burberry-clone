@@ -5,19 +5,19 @@ export const BoldText = ({ children, link }) => {
     <div
       className={`${
         link ? 'cursor-pointer hover:text-gray-400' : ''
-      } flex items-center justify-between py-3 uppercase font-semibold text-xs text-black`}
+      } flex items-center justify-between py-4 uppercase font-semibold text-xs text-black`}
     >
       {children}
     </div>
   );
 };
 
-const NormalText = ({ children, link }) => {
+const NormalText = ({ children, link, paddingY = 3 }) => {
   return (
     <div
       className={`${
         link ? 'cursor-pointer hover:text-gray-400' : ''
-      } text-xs text-black`}
+      } py-${paddingY} text-xs text-black`}
     >
       {children}
     </div>
