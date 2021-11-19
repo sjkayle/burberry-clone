@@ -44,17 +44,17 @@ const Footer = () => {
 
   return (
     <footer className='bg-white'>
-      <div className='px-4 lg:px-10 py-8 flex flex-col lg:flex-row lg:gap-14'>
+      <div className='px-4 lg:px-10 py-6 flex flex-col lg:flex-row lg:gap-14'>
         <div className='flex-1 mb-10'>
           <BoldText>E-mail signup</BoldText>
 
-          <Text paddingY='0'>
+          <Text height='10'>
             Sign up for email updates on the latest Burberry collections,
             campaigns and videos.
           </Text>
 
           <div className='mt-8 relative'>
-            <label for='email' className='hidden'>
+            <label htmlFor='email' className='hidden'>
               Email
             </label>
             <input
@@ -94,13 +94,13 @@ const Footer = () => {
         <div className='flex-1'>
           <div className='flex lg:flex-col items-center lg:items-start justify-between'>
             <BoldText link>Language</BoldText>
-            <Text link paddingY='0'>
+            <Text link height='5'>
               English
             </Text>
           </div>
-          <div className='flex lg:flex-col items-center lg:items-start justify-between lg:mt-7'>
+          <div className='flex lg:flex-col items-center lg:items-start justify-between lg:mt-4'>
             <BoldText link>Shipping to</BoldText>
-            <Text link paddingY='0'>
+            <Text link height='5'>
               Malaysia (MYR)
             </Text>
           </div>

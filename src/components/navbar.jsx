@@ -97,7 +97,7 @@ const Navbar = () => {
               {data[hoveredItem - 1].links.map((link, index) => {
                 const texts = link.split('|');
                 return (
-                  <Text key={index} link paddingY='2'>
+                  <Text key={index} link height='7'>
                     {texts[0]}
                     {texts.length > 1 && <Badge text={texts[1]} />}
                   </Text>

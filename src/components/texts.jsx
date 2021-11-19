@@ -12,12 +12,12 @@ export const BoldText = ({ children, link }) => {
   );
 };
 
-const Text = ({ children, link, paddingY = 3 }) => {
+const Text = ({ children, link, height = 12 }) => {
   return (
     <div
       className={`${
         link ? 'cursor-pointer hover:text-gray-400' : ''
-      } flex items-center py-${paddingY} text-xs text-black`}
+      } flex items-center h-${height} text-xs text-black`}
     >
       {children}
     </div>
